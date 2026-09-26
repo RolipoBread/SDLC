@@ -1,0 +1,43 @@
+# --- Сборка ---
+target/
+build/
+out/
+bin/
+obj/
+
+# --- IDE ---
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.vs/
+
+# --- Java / Kotlin ---
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+.kotlin
+
+# --- Maven ---
+.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# --- Gradle ---
+.gradle/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Логи, временные ---
+*.log
+*.tmp
+*.bak
+tmp/
+temp/

@@ -1,0 +1,60 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Courier
+skinparam linetype ortho
+
+class ExcuseApplication {
+    + main(args : String[]) : void
+}
+
+class Situation {
+    УЧЕБА
+    РАБОТА
+    ОПОЗДАНИЕ
+    ЗАБЫВЧИВОСТЬ
+}
+
+class ExcuseGenerator {
+    + generate(situation : Situation) : String
+}
+
+class ExcuseModel {
+    + addListener(listener : ModelListener) : void
+    + setUserData(name : String, details : String) : void
+    + setLastExcuse(excuse : String) : void
+}
+
+interface ModelListener {
+    + onModelChanged() : void
+}
+
+class MainView {
+    + init(stage : Stage) : void
+    + onModelChanged() : void
+    + showInputDialog() : void
+}
+
+class MainController {
+    + MainController(model, generator, view)
+    + bindDialogHandlers() : void
+}
+
+ExcuseApplication --> ExcuseModel
+ExcuseApplication --> ExcuseGenerator
+ExcuseApplication --> MainView
+ExcuseApplication --> MainController
+
+MainController --> ExcuseModel
+MainController --> ExcuseGenerator
+MainController --> MainView
+
+MainView --> ModelListener
+MainView --> ExcuseModel
+
+ExcuseModel --> Situation
+ExcuseGenerator --> Situation
+ExcuseModel --> ModelListener
+
+@enduml

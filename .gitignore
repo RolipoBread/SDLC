@@ -41,3 +41,9 @@ desktop.ini
 *.bak
 tmp/
 temp/
+# Игнорируем большие файлы и системный мусор
+*.sh
+SysML-v2-Release/
+.ipynb_checkpoints/
+Untitled.ipynb
+miniconda3/
